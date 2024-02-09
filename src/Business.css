@@ -1,0 +1,54 @@
+.business {
+  border: 1px  solid rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px,
+              rgba(0, 0, 0, 0.14) 0px 1px 1px 0px,
+                rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+  /* border-top-left-radius: 5px; */
+  /* border-top-right-radius: 5px; */
+}
+
+.business-content {
+  padding: 8px;
+}
+
+.business-name {
+  margin: 12px 0;
+}
+
+.business-picture {
+  max-width: 300px;
+  max-height: 300px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.business-details-right {
+  text-align: right;
+}
+
+.business-details {
+  font-family: "Raleway", sans-serif;
+  font-size: 13px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.business-category {
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #d8b706;
+  font-size: 16px;
+}
+
+.business-rating {
+  color: #d8b706;
+  font-weight: 800;
+}
+
+.business-details p {
+  margin: 0;
+}
