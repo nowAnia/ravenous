@@ -1,18 +1,14 @@
 import Business from './Business.js'
-import informations from './library.js'
+
 import './BusinessList.css'
 
 
-function BusinessList(){
+function BusinessList(props){
   return (
     <div className='container business-list'>
-      <Business business_info={informations[0]} />
-      <Business business_info={informations[0]} />
-      <Business business_info={informations[0]} />
-      <Business business_info={informations[0]} />
-      <Business business_info={informations[0]} />
-      <Business business_info={informations[0]} />
-      <Business business_info={informations[0]} />
+      {props.businesses.map(x =>
+        <Business info={x} key={x.id}/>
+      )}
     </div>
   )
 }

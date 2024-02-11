@@ -28,6 +28,11 @@
   color: #ccc;
 }
 
+.sorting-button.clicked {
+  color: #f7c465;
+  border-bottom: 1px solid #f7c465;
+}
+
 .search {
   width: 280px;
   padding: 8px 12px;

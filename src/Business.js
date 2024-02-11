@@ -2,7 +2,7 @@ import './Business.css'
 
 
 function Business(props){
-  const info = props.business_info
+  const info = props.info
 
   return (
     <div className="business">
@@ -28,6 +28,3 @@ function Business(props){
 }
 
 export default Business;
-
-
-//image, name, address, city, state, zipcode, category, rating, and review count
