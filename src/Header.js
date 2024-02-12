@@ -1,12 +1,48 @@
 import { useState } from 'react';
 import './Header.css';
+import { callYelpApi } from './api/client';
 
-function Header() {
-  const [value, setValue] = useState("1")
+function Header(props) {
+  const [value, setValue] = useState('best_match')
+  const [searchText, setSearchText] = useState("")
+  const [whereText, setWhereText] = useState("")
+
+  function handleWhereChange(event) {
+    const where = event.target.value
+    setWhereText(where)
+  }
+
+  function handleSearchChange(event){
+    const newText = event.target.value
+    setSearchText(newText)
+  }
 
   function handleClick(event) {
     const buttonValue = event.target.value
     setValue(buttonValue)
+    searchWith({
+      search: searchText,
+      location: whereText,
+      sorting: buttonValue
+    })
+  }
+
+  function searchWith(query) {
+    let businessesPromise = callYelpApi(query)
+
+    businessesPromise.then(json => {
+      props.onSearch(json.businesses)
+    })
+  }
+
+  function handleDoSearch() {
+    const q = {
+      search: searchText,
+      location: whereText,
+      sorting: value
+    }
+
+    searchWith(q)
   }
 
   function buttonClass(buttonId) {
@@ -16,16 +52,16 @@ function Header() {
   return (
     <div className='header'>
       <div>
-        <button value="1" onClick={handleClick} className={buttonClass("1")}>Best Match</button>
-        <button value="2" onClick={handleClick} className={buttonClass("2")}>Most Reviewed</button>
-        <button value="3" onClick={handleClick} className={buttonClass("3")}>Highest Rated</button>
+        <button value='best_match' onClick={handleClick} className={buttonClass('best_match')}>Best Match</button>
+        <button value='review_count' onClick={handleClick} className={buttonClass('review_count')}>Most Reviewed</button>
+        <button value='rating' onClick={handleClick} className={buttonClass('rating')}>Highest Rated</button>
       </div>
       <div className='inputs'>
-        <input className='search' placeholder='Search Business' />
-        <input className='search' placeholder='Where?'/>
+        <input value={searchText} onChange={handleSearchChange} className='search' placeholder='Search Business' />
+        <input value={whereText} onChange={handleWhereChange} className='search' placeholder='Where?'/>
       </div>
       <div>
-        <button className='search-button'>Let's Go</button>
+        <button onClick={handleDoSearch} className='search-button'>Let's Go</button>
       </div>
     </div>
   )

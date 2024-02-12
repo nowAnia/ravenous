@@ -4,14 +4,21 @@ import Banner from './Banner';
 import BusinessList from './BusinessList.js'
 import Header from './Header';
 
-import informations from './library.js'
+
+import { useState } from 'react';
 
 function App() {
+  const [businesses, setBusinesses] = useState([])
+
+  function handleSearch(newBusinesses) {
+    setBusinesses(newBusinesses)
+  }
+
   return (
     <div className="app">
       <Banner />
-      <Header />
-      <BusinessList businesses={informations} />
+      <Header onSearch={handleSearch} />
+      <BusinessList businesses={businesses} />
     </div>
   );
 }
