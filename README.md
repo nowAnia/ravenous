@@ -31,7 +31,7 @@ Yelp API through a proxy service in order to bypass [CORS](https://developer.moz
 
 ### Screenshot
 
-()
+![Screenshot from 2024-03-01 09-46-12](https://github.com/nowAnia/ravenous/assets/152620390/80121b0d-fab7-40b4-b590-306257767027)
 
 ### High-level Component structure
 
@@ -40,8 +40,6 @@ search logic, where a user can decide what type of food they would like to choos
 type of search between _best match_, _highest rated_, or _most reviewed_ . Once the data is retrieved from
 Yelp API it will be presented in `BusinessList` with multiple single `Business` that contain detailed information about
 a restaurant.
-
-()
 
 ### Proxy server
 
@@ -52,4 +50,4 @@ production-like system this would be a major vulnerability. However for developm
 specific use case that we are using it with - it is acceptable. Below you can see the entire diagram of ravenous
 network requests:
 
-[]
+![CORS drawio](https://github.com/nowAnia/ravenous/assets/152620390/c843ce96-0ff9-458d-b6f1-f287bb6fb8a8)
