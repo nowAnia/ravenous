@@ -1,9 +1,7 @@
 const key = process.env['REACT_APP_YELP_API_KEY']
 
 if (key === undefined) {
-  throw new Error(
-    'REACT_APP_YELP_API_KEY variable is not set. Please provide ApiKey'
-  )
+  throw new Error('REACT_APP_YELP_API_KEY variable is not set. Please provide ApiKey')
 }
 
 const PROXY_SERVER_URL = 'https://cors-anywhere.herokuapp.com'

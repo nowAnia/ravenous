@@ -17,15 +17,12 @@ function Business(props) {
             </p>
             <p>{info.location.city}</p>
             <p>
-              {info.location.state} {info.location.zip_code} -{' '}
-              {info.location.country}
+              {info.location.state} {info.location.zip_code} - {info.location.country}
             </p>
           </div>
 
           <div className="business-details-right">
-            <p className="business-category">
-              {info.categories.map((x) => x.title).join(', ')}
-            </p>
+            <p className="business-category">{info.categories.map((x) => x.title).join(', ')}</p>
             <p className="business-rating">{info.rating} stars</p>
             <p>{info.review_count}</p>
           </div>

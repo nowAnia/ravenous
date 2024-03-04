@@ -1,11 +1,10 @@
-import './App.css';
-import './Shared.css';
-import Banner from './Banner';
+import './App.css'
+import './Shared.css'
+import Banner from './Banner'
 import BusinessList from './BusinessList.js'
-import Header from './Header';
+import Header from './Header'
 
-
-import { useState } from 'react';
+import { useState } from 'react'
 
 function App() {
   const [businesses, setBusinesses] = useState([])
@@ -20,7 +19,7 @@ function App() {
       <Header onSearch={handleSearch} />
       <BusinessList businesses={businesses} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

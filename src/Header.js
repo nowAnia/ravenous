@@ -52,41 +52,19 @@ function Header(props) {
   return (
     <div className="header">
       <div>
-        <button
-          value="best_match"
-          onClick={handleClick}
-          className={buttonClass('best_match')}
-        >
+        <button value="best_match" onClick={handleClick} className={buttonClass('best_match')}>
           Best Match
         </button>
-        <button
-          value="review_count"
-          onClick={handleClick}
-          className={buttonClass('review_count')}
-        >
+        <button value="review_count" onClick={handleClick} className={buttonClass('review_count')}>
           Most Reviewed
         </button>
-        <button
-          value="rating"
-          onClick={handleClick}
-          className={buttonClass('rating')}
-        >
+        <button value="rating" onClick={handleClick} className={buttonClass('rating')}>
           Highest Rated
         </button>
       </div>
       <div className="inputs">
-        <input
-          value={searchText}
-          onChange={handleSearchChange}
-          className="search"
-          placeholder="Search Business"
-        />
-        <input
-          value={whereText}
-          onChange={handleWhereChange}
-          className="search"
-          placeholder="Where?"
-        />
+        <input value={searchText} onChange={handleSearchChange} className="search" placeholder="Search Business" />
+        <input value={whereText} onChange={handleWhereChange} className="search" placeholder="Where?" />
       </div>
       <div>
         <button onClick={handleDoSearch} className="search-button">
